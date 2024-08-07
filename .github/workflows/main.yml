@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Deploy Page
 
 on:
   push:
@@ -20,4 +20,10 @@ jobs:
 
     - name: Deploy files via SCP
       run: |
-        scp -o StrictHostKeyChecking=no -r ./webpage/* root@43.204.206.207:/www/wwwroot/sameera.run.place
+        # Check if the directory exists
+        if [ -d "./website" ]; then
+          scp -o StrictHostKeyChecking=no -r ./webpage/* root@43.204.206.207:/www/wwwroot/sameera.run.place
+        else
+          echo "Directory ./website does not exist."
+          exit 1
+        fi
