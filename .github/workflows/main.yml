@@ -20,4 +20,4 @@ jobs:
 
     - name: Deploy files via SCP
       run: |
-        scp -o StrictHostKeyChecking=no -r ./website/* root@43.204.206.207:/www/wwwroot/sameera.run.place
+        scp -o StrictHostKeyChecking=no -r ./webpage/* root@43.204.206.207:/www/wwwroot/sameera.run.place
